@@ -7,7 +7,7 @@
           <el-row class="article-info">
             <el-col :span="8" class="article-date">
               <span class="fa fa-calendar-o"></span>
-              {{ articleDTO.createDate | dateFormat }}
+              {{ articleDTO.updateDate | dateFormat }}
             </el-col>
             <el-col :span="12" class="article-author" v-if="articleDTO.author">
               <el-avatar
@@ -55,6 +55,7 @@ export default {
         status: 0,
         author: null,
         createDate: new Date(),
+        updateDate: new Date(),
       },
     };
   },

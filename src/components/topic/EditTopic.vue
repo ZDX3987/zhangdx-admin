@@ -70,10 +70,10 @@ export default {
     this.operate = this.$route.params.operate;
     if (this.operate === 'update') {
       this.topicForm = this.$route.params.topic;
+      this.$api.topic.getTopicById(this.topicForm.id).then(res => {
+        this.topicForm = res.data;
+      }).catch(error => this.$message.error('查询失败'));
     }
-    this.$api.topic.getTopicById(this.topicForm.id).then(res => {
-      this.topicForm = res.data;
-    }).catch(error => this.$message.error('查询失败'))
   },
   methods: {
     saveTopic(formName) {
@@ -115,7 +115,7 @@ export default {
       this.$refs.selectArticleTable.toggleRowSelection(row);
     },
     dateFormat(row, column) {
-      return this.$options.filters['dateFormat'](row.createDate, 'yyyy-MM-dd')
+      return this.$options.filters['dateFormat'](row.createDate, 'yyyy-MM-DD')
     },
   }
 }

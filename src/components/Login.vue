@@ -2,8 +2,8 @@
   <div>
     <Bg/>
     <div class="login-page">
-      <el-row>
-        <el-col :span="10" :offset="7">
+      <el-row type="flex" justify="center">
+        <el-col :lg="8" :md="10" :sm="12" :xs="20">
           <h1 class="login-title">登录</h1>
           <div class="login-content">
             <el-form ref="form" :model="loginParam" :rules="rules">
@@ -111,8 +111,7 @@ export default {
 <style scoped>
 .login-page {
   text-align: center;
-  margin: 0 auto;
-  height: 100%;
+  height: 100vh;
 }
 
 .login-title {

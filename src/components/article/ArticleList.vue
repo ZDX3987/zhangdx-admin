@@ -21,7 +21,7 @@
         <el-table-column type="index" label="序号" width="80" align="center"></el-table-column>
         <el-table-column prop="title" label="标题" width="300" align="center"></el-table-column>
         <el-table-column prop="author.username" label="作者" width="180" align="center"></el-table-column>
-        <el-table-column sortable prop="createDate" :formatter="dateFormat" label="发布时间" width="180"
+        <el-table-column sortable prop="updateDate" :formatter="dateFormat" label="发布时间" width="180"
                          align="center"></el-table-column>
         <el-table-column label="状态" width="100" align="center">
           <template slot-scope="scope">
@@ -111,7 +111,7 @@ export default {
       }).catch(error => this.$message.error(error.msg));
     },
     dateFormat(row) {
-      return this.$options.filters['dateFormat'](row.createDate)
+      return this.$options.filters['dateFormat'](row.updateDate)
     }
   },
 };
