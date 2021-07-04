@@ -10,7 +10,7 @@ const userapi = {
     },
 
     regist(params) {
-        return http.post('/api/regist', params);
+        return http.post('/api/regist/u', params);
     },
     logout() {
         return http.get('/api/logout');
